@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+        <title>ABC Corporation Charters: Contateci</title>
+
+
+		<meta  http-equiv="Content-Type" content="text/html;  charset=UTF-8" />
+	    <link rel="stylesheet"  type="text/css" href="css/aircraft.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://www.emailmeform.com/builder/styles/dynamic.php?t=post" />
+<link rel="stylesheet" type="text/css" href="http://www.emailmeform.com/builder/theme_css/8T10oaYt72hG2AcKPgw031aM" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined'){
+    document.write(unescape("%3Cscript src='http://www.emailmeform.com/builder/js/jquery-1.7.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+if (typeof $.ui == 'undefined'){
+    document.write(unescape("%3Cscript src='http://www.emailmeform.com/builder/js/jquery-ui-1.7.2.custom.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="http://www.emailmeform.com/builder/js/dynamic.php?t=post&t2=0&use_CDN=true">
+    
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+//var emf_session_timeout_warner=new SessionTimeoutWarner(7200);
+
+
+EMF_jQuery(window).load(function(){
+        post_message_for_frame_height("8T10oaYt72hG2AcKPgw031aM");
+});
+
+EMF_jQuery(function(){
+        EMF_jQuery("#emf-form").validationEngine({
+                validationEventTriggers:"blur",
+                scroll:true
+        });
+
+
+        EMF_jQuery("#emf-form ul li").mousedown(highlight_field_on_mousedown);
+        EMF_jQuery("#emf-form ul li input, #emf-form ul li textarea, #emf-form ul li select").focus(highlight_field_on_focus);
+
+                var form_obj=EMF_jQuery("#emf-container form");
+        if(form_obj.length>0 && form_obj.attr('action').indexOf('#')==-1 && window.location.hash){
+                form_obj.attr('action', form_obj.attr('action')+window.location.hash);
+        }
+
+        init_rules();
+        //emf_session_timeout_warner.set_timers();
+        
+        force_session_for_submit_form();
+});
+
+var emf_widgets={text : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,number : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,textarea : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,checkbox : 
+                        function(index){
+                                var arr=new Array();
+                                $("input[name='element_"+index+"[]']:checked").each(function(){
+                                        arr[arr.length]=this.value;                             
+                                });
+                                var result=arr.join(", ");
+                                return result;
+                        }
+                ,radio : 
+                        function(index){
+                                var result="";
+                                $("input[name=element_"+index+"]:checked").each(function(){
+                                        result=this.value;                              
+                                });
+                                return result;
+                        }
+                ,select : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,email : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,phone : 
+                        function(index){
+                                var arr=new Array();
+                                $("input[id^=element_"+index+"_]").each(function(){
+                                        arr[arr.length]=this.value;
+                                });
+                                
+                                var result="";
+                                if(arr.length>0){
+                                        result=arr.join("-");
+                                }else{
+                                        result=$("#element_"+index).val();
+                                }
+                                return result;
+                        }
+                ,datetime : 
+                        function(index){
+                                var result="";
+                                
+                                var date_part="";
+                                if($("#element_"+index+"_year").length==1){
+                                        date_part=$("#element_"+index+"_year-mm").val()+"/"+$("#element_"+index+"_year-dd").val()+"/"+$("#element_"+index+"_year").val();
+                                }
+
+                                var time_part="";
+                                if($("#element_"+index+"_hour").length==1){
+                                        time_part=$("#element_"+index+"_hour").val()+":"+$("#element_"+index+"_minute").val()+" "+$("#element_"+index+"_ampm").val();
+                                }
+                                
+                                if(date_part && time_part){
+                                        result=date_part+" "+time_part;
+                                }else{
+                                        result=date_part ? date_part : time_part;
+                                }
+                                
+                                return result;
+                        }
+                ,url : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,file : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,select_multiple : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,price : 
+                        function(index){
+                                var result="";
+                                var arr=new Array();
+                                $("input[id^=element_"+index+"_]").each(function(){
+                                        arr[arr.length]=this.value;
+                                });
+                                result=arr.join(".");
+                                return result;
+                        }
+                ,hidden : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,section_break : 
+                        function(index){
+                                return "";
+                        }
+                ,page_break : 
+                        function(index){
+                                return "";
+                        }
+                ,deprecated : 
+                        function(index){
+                                return $("#element_"+index).val();
+                        }
+                ,address : 
+                        function(index){
+                                var result="";
+                                var element_arr=$("input,select").filter("[name='element_"+index+"[]']").toArray();
+                                result=element_arr[0].value+" "+element_arr[1].value+"\n"
+                                        +element_arr[2].value+","+element_arr[3].value+" "+element_arr[4].value+"\n"
+                                        +element_arr[5].value;
+                                return result;
+                        }
+                ,name : 
+                        function(index){
+                                var arr=new Array();
+                                $("input[id^=element_"+index+"_]").each(function(){
+                                        arr[arr.length]=this.value;
+                                });
+                                var result=arr.join(" ");
+                                return result;
+                        }
+                };
+
+var emf_condition_id_to_js_map={5 : 
+                        function(field_value, value){
+                                return field_value==value;
+                        }
+                ,6 : 
+                        function(field_value, value){
+                                return field_value!=value;
+                        }
+                ,1 : 
+                        function(field_value, value){
+                                return field_value.indexOf(value)>-1;
+                        }
+                ,2 : 
+                        function(field_value, value){
+                                return field_value.indexOf(value)==-1;
+                        }
+                ,3 : 
+                        function(field_value, value){
+                                return field_value.indexOf(value)==0;
+                        }
+                        ,4 : 
+                        function(field_value, value){
+                                return field_value.indexOf(value)==field_value.length-value.length;
+                        }
+                ,7 : 
+                function(field_value, value){
+                return field_value==value;
+        }
+        ,8 : 
+                        function(field_value, value){
+                                return parseFloat(field_value)>parseFloat(value);
+                        }
+                ,9 : 
+                        function(field_value, value){
+                                return parseFloat(field_value) < parseFloat(value);
+                        }
+                ,10 : 
+                        function(field_value, value){
+                                var date_for_field_value=Date.parse(field_value);
+                                var date_for_value=Date.parse(value);
+                                if(date_for_field_value && date_for_value){
+                                        return date_for_field_value == date_for_value;
+                                }
+                                return false;
+                        }
+                ,11 : 
+                        function(field_value, value){
+                                var date_for_field_value=Date.parse(field_value);
+                                var date_for_value=Date.parse(value);
+                                if(date_for_field_value && date_for_value){
+                                        return date_for_field_value < date_for_value;
+                                }
+                                return false;
+                        }
+                ,12 : 
+                        function(field_value, value){
+                                var date_for_field_value=Date.parse(field_value);
+                                var date_for_value=Date.parse(value);
+                                if(date_for_field_value && date_for_value){
+                                        return date_for_field_value > date_for_value;
+                                }
+                                return false;
+                        }
+                };
+var emf_group_to_field_rules_map=[];
+var emf_group_to_page_rules_for_confirmation_map=[];
+
+var emf_cart=null;
+var emf_page_info={current_page_index: 0, page_element_index_min: 0, page_element_index_max: 4};
+//]]>
+</script><!-- 
+ash6fwa04p
+-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35839782-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	</head>
+	
+	<body>
+	
+      <!--   <div class="centered"> -->
+        <!-- <div class="poster"> -->
+        	<div class="wrap">
+                <div class="ribbon">
+                    <p>Scegliere lingua:<p>   
+                    <a href="contact.html"><img src="images/english-flag.jpg" alt="Inglese" /></a>
+                    <a href="contact-es.html"><img src="images/spanish-flag.png" alt="Spagnolo" /></a>
+                    <a href="contact-por.html"><img src="images/brazil-flag.jpg" alt="Portoghese" /></a>
+                </div>
+    	    </div>
+
+           <div class="clear"></div>
+
+        	<div class="header">
+                <div class="wrap">
+                    <div class="logo-nav">
+                        <a href="index-it.html"><img class="logo" src="images/logo-white.png" alt="ABC Corporation Charters" /></a>
+            			<!--<img src="images/nav-quote.png" alt="Free Quote" class="nav-quote" /> -->
+                        <!--  <span class="nav-quote"></span> -->
+            			<ul class="nav nav-es">
+                            <li><a href="index-it.html">Inizio</a></li>
+                            <li><a href="aircraft-it.html">Aerei</a></li>
+                            <li><a href="about-it.html">Cerca ABC</a></li>
+                            <li><a href="faq-it.html">FAQ</a></li>
+                            <li><a href="contact-it.html"><span class="nav-blue">Contattateci</span></a></li>
+                        </ul>
+                        <!-- <span class="nav-quote"></span> -->
+            	   </div> 
+                </div>   
+        	</div> <!-- header end-->
+
+        	<div class="clear"></div>
+       		
+            <div class="banner-title">
+                <div class="wrap">
+                    <p><span class="bold">CONTATTI</span></p>
+                </div>        	
+            </div>
+
+            <div class="wrap">
+                
+<div id="emf-container-outer">
+  <div id="emf-container">
+    <div id="emf-logo">
+      <a>EmailMeForm</a>
+    </div>
+    <form id="emf-form" target="_self" class="topLabel" enctype="multipart/form-data" method="post" action="http://www.emailmeform.com/builder/form/8T10oaYt72hG2AcKPgw031aM" name="emf-form">
+      <div id="emf-form-instruction" class="emf-head-widget">
+        <div id="emf-form-title" class="emf-bold">
+          Contattateci
+        </div>
+        <div id="emf-form-description">
+            Come possiamo aiutarti
+        </div>
+      </div>
+      <ul>
+        <li id="emf-li-0" class="emf-li-field emf-field-text data_container" style="text-align:">
+          <label class="emf-label-desc" for="element_0">Nome <span>*</span></label>
+          <div class="emf-div-field">
+            <input id="element_0" name="element_0" value="" size="30" type="text" class="validate[required]" />
+          </div>
+          <div class="emf-clear"></div>
+        </li>
+        <li id="emf-li-1" class="emf-li-field emf-field-email data_container" style="text-align:">
+          <label class="emf-label-desc" for="element_1">Email <span>*</span></label>
+          <div class="emf-div-field">
+            <input id="element_1" name="element_1" class="validate[required,custom[email]]" value="" size="30" type="text" />
+          </div>
+          <div class="emf-clear"></div>
+        </li>
+        <li id="emf-li-2" class="emf-li-field emf-field-phone data_container" style="text-align:left">
+          <label class="emf-label-desc" for="element_2">Telefono</label>
+          <div class="emf-div-field">
+            <input id="element_2" name="element_2" class="validate[optional,custom[telephone]]" value="" size="30" type="text" />
+          </div>
+          <div class="emf-clear"></div>
+        </li>
+        <li id="emf-li-3" class="emf-li-field emf-field-text data_container" style="text-align:left">
+          <label class="emf-label-desc" for="element_3">Argomento<span>*</span></label>
+          <div class="emf-div-field">
+            <input id="element_3" name="element_3" value="" size="50" type="text" class="validate[required]" />
+          </div>
+          <div class="emf-clear"></div>
+        </li>
+        <li id="emf-li-4" class="emf-li-field emf-field-textarea data_container" style="text-align:">
+          <label class="emf-label-desc" for="element_4">Messagio<span>*</span></label>
+          <div class="emf-div-field">
+            <textarea id="element_4" name="element_4" cols="60" rows="10" class="validate[required]">
+</textarea>
+          </div>
+          <div class="emf-clear"></div>
+        </li>
+        <li id="emf-li-recaptcha">
+          <script type="text/javascript">
+//<![CDATA[
+                                        
+                                $(function(){
+                                        $('#recaptcha_response_field').addClass('validate[required]');
+                                });
+          //]]>
+          </script>
+          <div>
+            <script type="text/javascript">
+//<![CDATA[
+            var RecaptchaOptions = {
+                theme: 'clean',
+                custom_theme_widget: 'emf-recaptcha_widget'
+                };
+            //]]>
+            </script> <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LchicQSAAAAAGksQmNaDZMw3aQITPqZEsX77lT9">
+</script> <noscript><iframe src="https://www.google.com/recaptcha/api/noscript?k=6LchicQSAAAAAGksQmNaDZMw3aQITPqZEsX77lT9" height="300" width="500" frameborder="0"></iframe><br />
+            <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+</textarea> <input type="hidden" name="recaptcha_response_field" value="manual_challenge" /></noscript>
+          </div>
+        </li>
+        <li id="emf-li-post-button" class="right">
+          <input value="Send email" type="submit" onmouseover="return true;" />
+        </li>
+      </ul><input name="element_counts" value="5" type="hidden" /> <input name="embed" value="forms" type="hidden" /><br />
+      <div style="text-align:center">
+        <font face="Arial" size="2" color="#555555">Powered by</font><span style="position: relative; padding-left: 3px; bottom: -5px;"><img src=
+        "http://www.emailmeform.com/builder/images/footer-logo.png" /></span><font face="Arial" size="2" color="#555555">EMF</font> <a style="text-decoration:none;" href="http://www.emailmeform.com/"
+        target="_blank"><font face="Arial" size="2" color="#555555">HTML Form</font></a><br />
+        <a style="line-height:20px;font-size:70%;text-decoration:none;" href="http://www.emailmeform.com/report-abuse.html?http://www.emailmeform.com/builder/form/8T10oaYt72hG2AcKPgw031aM" target=
+        "_blank"><font face="Arial" size="2" color="#555555">Report Abuse</font></a>
+      </div><input name="_temp_id" value="" type="hidden" />
+    </form>
+  </div>
+</div>
+            </div> <!-- end wrap -->
+
+
+
+            <div class="clear"></div>
+
+
+        	<div id="section4">
+                <div class="wrap">        	        		
+                    <div id="section4-content">
+
+            			<div class="contact-it">
+                            <h2>Contattateci</h2>
+                            <div class="usa-office">
+        	    					<p><span class="dark-blue">Ufficio Principale</span></br>4000 Midstream Ct.</br>Apex, NC 27539</br></br>Tel: +1 919 367 2764</br>Fax: +1 919 367 9256</br><a href="mailto:bruna@abccorporationcharters.com?subject=Inquiry">bruna@abccorporationcharters.com</a></p>
+        	    				</div>
+        	    				
+        	    				<div class="italy-office">
+        	    					<p><span class="dark-blue">Marina Montanari</br>Rappresentante per l'Italia</span></br>Tel: +39 338 342 8161 </br><a href="mailto:marina@abccorporationcharters.com">marina@abccorporationcharters.com</a></p>	    			
+        	    				</div>
+        					
+        	    				<div class="spain-office">
+        	    					<p><span class="dark-blue">Elisa Cappello</br>Rappresentante per il Brasile</span></br>Tel: +55 21 77152343</br>ID Nextel: 645*16544</br><a href="mailto:elisa@abccorporationcharters.com">elisa@abccorporationcharters.com</a></p>
+        	    				</div>	         
+                        </div> <!-- contact end -->
+
+                        <div class="social-media-it">
+                            <h3>Social Media</h3>
+                            <a target="_blank" href="http://www.facebook.com/AbcCorporationCharters"><img src="images/facebook.png" alt="" class="media-icons"></a>
+                            <img src="images/twitter.png" alt="" class="media-icons">
+                            <a target="_blank" href="http://www.linkedin.com/company/1957543?trk=tyah"><img src="images/linkedin.png" alt="" class="media-icons"></a>
+                        </div>
+                    </div>
+                </div> 
+        	</div> <!-- section4-main -->
+        	
+        	<div id="footer">
+                 <div class="wrap"> 
+                    <div class="footer-main">
+            			<div class="site-map">
+            				<p><a href="index-it.html">Inizio</a> | <a href="aircraft-it.html">Aerei</a> | <a href="charter-request-it.html">Quotazione</a> | <a href="about-it.html">Cerca abc</a> | <a href="faq-it.html">FAQ</a> | <span class="blue">Contattateci</span></p>
+                        </div>
+                            
+                        <div class="copyright">
+                            <p>Diritti d'Autore - <span class="blue">ABC Corporation Charters</span></p>
+            			</div>
+                    </div>
+                </div>
+    	    </div>
+       <!--  </div> --> <!-- centered end -->
+	</body>
+</html>
